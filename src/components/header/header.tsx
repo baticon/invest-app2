@@ -1,0 +1,102 @@
+import React, { useState, useEffect } from "react";
+import { FC } from "react";
+import style from "./header.module.css";
+import newsStyle from "./news.module.css";
+import { ReactComponent as Logo } from "../../media/jusan_logo.svg";
+import backgroundVideo from "../../media/videoplayback2.mp4";
+import SearchBar from "./searchBar";
+import { INewsInfo } from "./types";
+import useNews from "./useNews";
+
+const Header = () => {
+  const [searchChecker, setSearchChecker] = useState<number>();
+
+  const [searchInput, setSearchInput] = useState("");
+  const handleChangeSearchInput = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setSearchInput(event.target.value);
+    console.log(searchInput);
+  };
+
+  const newsLine: INewsInfo[] = useNews();
+
+  return (
+    <div key={Date.now()}>
+      <header className={style.header}>
+        <Logo className={style.logo}></Logo>
+        <a href="https://www.jusaninvest.kz/ipo.html">IPO</a>
+        <a href="https://www.jusaninvest.kz/tariffs">Тарифы</a>
+        <a href="https://www.jusaninvest.kz/ipif">ПИФы</a>
+        <a href="https://www.jusaninvest.kz/pension">Пенсионные активы</a>
+        <a href="https://www.jusaninvest.kz/academy">Обучение</a>
+        <a href="https://www.jusaninvest.kz/junior">Junior</a>
+        <a href="https://www.jusaninvest.kz/radar">Radar</a>
+        <div key={`${Date.now()}+q`}>
+          <div className={style.user}>USER</div>
+          <span>User name</span>
+        </div>
+        <div className={style.video} key={`${Date.now()}+w`}>
+          <video
+            autoPlay
+            loop
+            muted
+            style={{
+              position: "fixed",
+              width: "30%",
+              left: "93%",
+              top: "10%",
+              height: "20%",
+              objectFit: "cover",
+              transform: "translate(-50%, -50%)",
+              zIndex: "0",
+            }}
+          >
+            <source src={backgroundVideo} type="video/mp4"></source>
+          </video>
+        </div>
+      </header>
+      <div className={newsStyle.tickerwrapperv} key={`${Date.now()}+e`}>
+        <div className={newsStyle.heading}>Trending Now</div>
+        <ul className={newsStyle.newstickerv}>
+          <li className={newsStyle.newstickervli}>
+            <a href="https://github.com/baticon?tab=repositories">
+              JUSAN invest web-app made by Batyrbek Kantarbayev
+            </a>
+          </li>
+          <li className={newsStyle.newstickervli}>
+            <a href={newsLine[0] ? newsLine[0].url : ""}>
+              {newsLine[0] ? newsLine[0].headline : ""}
+            </a>
+          </li>
+          <li className={newsStyle.newstickervli}>
+            <a href={newsLine[1] ? newsLine[1].url : ""}>
+              {newsLine[1] ? newsLine[1].headline : ""}
+            </a>
+          </li>
+          <li className={newsStyle.newstickervli}>
+            <a href={newsLine[2] ? newsLine[2].url : ""}>
+              {newsLine[2] ? newsLine[2].headline : ""}
+            </a>
+          </li>
+        </ul>
+
+        <div style={{ backgroundColor: "red", display: "flex" }}>
+          {/* {addDiv && <div>Added div</div>} */}
+          {/* <div>{searchInput && singleFetch(searchInput)}</div> */}
+          <button onClick={() => setSearchChecker(1)}>Search</button>
+          <input
+            className={newsStyle.searchField}
+            type="text"
+            placeholder="🔍 Search by stock symbol (AAPL, CHCI ...)"
+            id="searchField"
+            // onChange={() => handleChangeSearchInput}
+            onChange={handleChangeSearchInput}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;

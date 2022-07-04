@@ -1,0 +1,58 @@
+.container {
+}
+
+.header {
+  color: #21212b;
+  font-size: 25px;
+}
+
+.stockList {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 120px auto 80px;
+  column-gap: 50px;
+  row-gap: 15px;
+  color: white;
+}
+
+.span {
+  /* font-size: 15px; */
+  color: white;
+  /* text-decoration: none; */
+  text-decoration: underline;
+  text-decoration-color: #21212b;
+}
+
+.individualStock {
+  position: relative;
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-top: 5px;
+  height: 100px;
+  border-radius: 15px;
+  background: #21212b;
+  border-color: #ea4335;
+  border-width: 5px;
+  border-style: inset;
+}
+
+.logo {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.companyLogo {
+  width: 95%;
+  position: absolute;
+  bottom: 0;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}

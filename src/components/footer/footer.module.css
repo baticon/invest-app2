@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  position: sticky;
+  padding-left: 10px;
+  bottom: 0;
+  width: 99%;
+  height: 50px; /* Height of the footer */
+  background: #21212b;
+  position: sticky;
+  bottom: 0;
+}
+
+.link {
+  color: white;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
