@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import MainPage from "./components/mainpage/mainPage";
 import CompanyDetails from "./components/company/companyDetails";
 import { Routes, Route } from "react-router-dom";

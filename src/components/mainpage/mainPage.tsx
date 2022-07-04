@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "../header/header";
 import SubHeader from "../subheader/subheader";
 import StockList from "../stockList/stockList";
 import fetchStocks from "../../data/dataFinnhub";
-import fetchFMP from "../../data/dataFMP";
-// import fetchStocks from "./data/dummy_data";
 import Footer from "../footer/footer";
 
 interface IStocks {
@@ -23,7 +21,6 @@ interface IStocks {
 const MainPage = () => {
   const [stocks, setStocks] = useState<IStocks[]>([]);
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState<String>();
 
   useEffect(() => {
     async function pullData() {
@@ -39,7 +36,6 @@ const MainPage = () => {
       <div style={{ display: "flex" }}>
         <SubHeader>
           <StockList stocks={stocks} page={page}></StockList>
-          {/* <StockList stocks={stocks}></StockList> */}
           <br></br>
           <br></br>
           <div style={{ paddingLeft: "340px", margin: "5px" }}>

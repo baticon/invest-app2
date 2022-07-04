@@ -1,24 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { FC } from "react";
 import style from "./header.module.css";
 import newsStyle from "./news.module.css";
 import { ReactComponent as Logo } from "../../media/jusan_logo.svg";
 import backgroundVideo from "../../media/videoplayback2.mp4";
-import SearchBar from "./searchBar";
 import { INewsInfo } from "./types";
 import useNews from "./useNews";
 
 const Header = () => {
-  const [searchChecker, setSearchChecker] = useState<number>();
-
-  const [searchInput, setSearchInput] = useState("");
-  const handleChangeSearchInput = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setSearchInput(event.target.value);
-    console.log(searchInput);
-  };
-
   const newsLine: INewsInfo[] = useNews();
 
   return (
@@ -82,16 +69,12 @@ const Header = () => {
         </ul>
 
         <div style={{ backgroundColor: "red", display: "flex" }}>
-          {/* {addDiv && <div>Added div</div>} */}
-          {/* <div>{searchInput && singleFetch(searchInput)}</div> */}
-          <button onClick={() => setSearchChecker(1)}>Search</button>
+          <button>Search</button>
           <input
             className={newsStyle.searchField}
             type="text"
             placeholder="🔍 Search by stock symbol (AAPL, CHCI ...)"
             id="searchField"
-            // onChange={() => handleChangeSearchInput}
-            onChange={handleChangeSearchInput}
           />
         </div>
       </div>
