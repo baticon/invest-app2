@@ -5,7 +5,9 @@ const Header = (stocks: any) => {
   return (
     <div>
       <header className={style.header}>
-        <Logo className={style.logo}></Logo>
+        <a href="https://www.jusaninvest.kz/">
+          <Logo className={style.logo}></Logo>
+        </a>
         <a href="https://www.jusaninvest.kz/ipo.html">IPO</a>
         <a href="https://www.jusaninvest.kz/tariffs">Тарифы</a>
         <a href="https://www.jusaninvest.kz/ipif">ПИФы</a>

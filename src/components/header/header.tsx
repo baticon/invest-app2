@@ -11,7 +11,9 @@ const Header = () => {
   return (
     <div key={Date.now()}>
       <header className={style.header}>
-        <Logo className={style.logo}></Logo>
+        <a href="https://www.jusaninvest.kz/">
+          <Logo className={style.logo}></Logo>
+        </a>
         <a href="https://www.jusaninvest.kz/ipo.html">IPO</a>
         <a href="https://www.jusaninvest.kz/tariffs">Тарифы</a>
         <a href="https://www.jusaninvest.kz/ipif">ПИФы</a>
@@ -35,7 +37,6 @@ const Header = () => {
               top: "0%",
               height: "100%",
               objectFit: "cover",
-              // transform: "translate(-50%, -50%)",
               zIndex: "0",
             }}
           >

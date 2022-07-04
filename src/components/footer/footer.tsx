@@ -5,7 +5,9 @@ import style from "./footer.module.css";
 const Footer = () => {
   return (
     <footer className={style.footer}>
-      <Logo className={style.logo}></Logo>
+      <a href="https://www.jusaninvest.kz/">
+        <Logo className={style.logo}></Logo>
+      </a>
       <p>Author: Batyrbek Kantarbayev</p>
       <p>
         <span>
