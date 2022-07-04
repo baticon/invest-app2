@@ -1,6 +1,4 @@
-import React from "react";
 import style from "./subheader.module.css";
-import { StockInfo } from "./dataInterface";
 
 const SubHeader = (props: any) => {
   return (

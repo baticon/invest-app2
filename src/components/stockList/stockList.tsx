@@ -1,7 +1,6 @@
 import { FC } from "react";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import style from "./stockList.module.css";
-import priceRequest from "./priceRequest";
 import fetchFMP from "../../data/dataFMP";
 import fetchLogo from "../../data/logoFetch";
 import { Link } from "react-router-dom";
@@ -35,11 +34,10 @@ const StockList: FC<StockProps> = ({ stocks, page }) => {
         const fetchedLogo = await fetchLogo(stockSymbol);
         if (fetchedLogo !== undefined) {
           setLogo(fetchedLogo.logo);
-          // console.log(fetchedLogo.logo);
         }
       }
       pullData();
-    }, []);
+    }, [stockSymbol]);
     return logo;
   }
 
