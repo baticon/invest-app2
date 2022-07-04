@@ -20,8 +20,8 @@ const Header = () => {
         <a href="https://www.jusaninvest.kz/junior">Junior</a>
         <a href="https://www.jusaninvest.kz/radar">Radar</a>
         <div key={`${Date.now()}+q`}>
-          <div className={style.user}>USER</div>
-          <span>User name</span>
+          <div className={style.user}>Login</div>
+          <span>Sing up</span>
         </div>
         <div className={style.video} key={`${Date.now()}+w`}>
           <video
