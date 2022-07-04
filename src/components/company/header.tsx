@@ -14,8 +14,8 @@ const Header = (stocks: any) => {
         <a href="https://www.jusaninvest.kz/junior">Junior</a>
         <a href="https://www.jusaninvest.kz/radar">Radar</a>
         <div>
-          <div className={style.user}>USER</div>
-          <span>User name</span>
+          <div className={style.user}>Login</div>
+          <span>Sing up</span>
         </div>
       </header>
     </div>
