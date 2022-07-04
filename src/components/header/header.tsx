@@ -29,13 +29,13 @@ const Header = () => {
             loop
             muted
             style={{
-              position: "fixed",
+              position: "absolute",
               width: "30%",
               left: "93%",
-              top: "10%",
-              height: "20%",
+              top: "0%",
+              height: "100%",
               objectFit: "cover",
-              transform: "translate(-50%, -50%)",
+              // transform: "translate(-50%, -50%)",
               zIndex: "0",
             }}
           >

@@ -6,8 +6,6 @@ import useDailyGraphInfo from "./useDailyGraphInfo";
 import useWeeklyGraphInfo from "./useWeeklyGraphInfo";
 import useMonthlyGraphInfo from "./useMonthlyGraphInfo";
 import { ISlicedGraphInfo } from "./types";
-import { CartesianGrid, Tooltip, Legend } from "recharts";
-import { LineChart, Line, XAxis, YAxis } from "recharts";
 import Header from "./header";
 import Footer from "../footer/footer";
 import Graph from "./graph";
@@ -44,6 +42,7 @@ const CompanyDetails = () => {
       );
       setDataArray(dataArray);
       setDataKey("Every 5 minutes");
+      console.log(dataArray);
     }
     if (graphDailyInfo && timeSeries === "daily") {
       let timeSeries = graphDailyInfo["Time Series (Daily)"];
