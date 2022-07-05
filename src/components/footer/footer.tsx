@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as Logo } from "../../media/jusan_logo.svg";
 import style from "./footer.module.css";
 

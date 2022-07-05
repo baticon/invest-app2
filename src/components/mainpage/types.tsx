@@ -1,9 +1,4 @@
-export interface StockInfo {
-  //   id: string;
-  //   value: number | string;
-  //   flag: boolean;
-  //   hasmine: boolean;
-  //   open: boolean;
+export interface IStocks {
   currency: string;
   description: string;
   displaySymbol: string;

@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+}
+
+.buttonContainer {
+  width: 100%;
+  margin: 5px;
+  text-align: center;
+}
+
+.button {
+  margin: 10px;
+}

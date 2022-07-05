@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   color: white;
-  position: sticky;
+  /* position: sticky; */
   padding-left: 10px;
   bottom: 0;
   width: 99%;
-  height: 50px; /* Height of the footer */
+  height: 50px;
   background: #21212b;
-  position: sticky;
-  bottom: 0;
+  /* position: sticky;
+  bottom: 0; */
 }
 
 .link {

@@ -9,6 +9,7 @@ import { ISlicedGraphInfo } from "./types";
 import Header from "./header";
 import Footer from "../footer/footer";
 import Graph from "./graph";
+import style from "./companyDetails.module.css";
 
 const CompanyDetails = () => {
   const URL = useLocation();
@@ -42,7 +43,6 @@ const CompanyDetails = () => {
       );
       setDataArray(dataArray);
       setDataKey("Every 5 minutes");
-      console.log(dataArray);
     }
     if (graphDailyInfo && timeSeries === "daily") {
       let timeSeries = graphDailyInfo["Time Series (Daily)"];
@@ -101,27 +101,9 @@ const CompanyDetails = () => {
   ]);
 
   return (
-    <div
-      key={identifier}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-      }}
-    >
+    <div className={style.container} key={identifier}>
       <Header></Header>
-      <div
-        key={`${identifier}+q`}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          WebkitJustifyContent: "space-around",
-        }}
-      >
+      <div className={style.subContainer} key={`${identifier}+q`} style={{}}>
         <div>
           <img src={`${companyInfo?.logo}`} alt="Company logo"></img>
         </div>
@@ -131,36 +113,28 @@ const CompanyDetails = () => {
         <div key={`${identifier}+e`}>
           <button
             onClick={() => {
-              console.log("setting to EVERY FIVE MIN");
               setTimeSeries("every five min");
-              console.log(timeSeries);
             }}
           >
             Every 5 min
           </button>
           <button
             onClick={() => {
-              console.log("setting to DAILY");
               setTimeSeries("daily");
-              console.log(timeSeries);
             }}
           >
             Daily
           </button>
           <button
             onClick={() => {
-              console.log("setting to WEEKLY");
               setTimeSeries("weekly");
-              console.log(timeSeries);
             }}
           >
             Weekly
           </button>
           <button
             onClick={() => {
-              console.log("setting to MONTHLY");
               setTimeSeries("monthly");
-              console.log(timeSeries);
             }}
           >
             Monthly

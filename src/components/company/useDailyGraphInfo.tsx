@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import fetchDailyGraphInfo from "../../data/dummyDailyDataAlpha"; // this is fake data
 import fetchDailyGraphInfo from "../../data/dataDailyAlphavantage";
 import { IDailyGraphInfo } from "./types";
 

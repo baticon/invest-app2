@@ -1,5 +1,3 @@
-import React from "react";
-import { FC } from "react";
 import { useState, useEffect } from "react";
 import style from "./searchBar.module.css";
 import SearchIcon from "@mui/icons-material/Search";
@@ -11,8 +9,6 @@ function Searchbar(placeholder: any) {
   useEffect(() => {
     async function pullData() {
       const stocks = await fetchStocks();
-      console.log("test from App.tsx");
-      console.log(stocks);
       setStocks(stocks);
     }
 
