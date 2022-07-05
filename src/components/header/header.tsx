@@ -32,7 +32,7 @@ const Header = () => {
             muted
             style={{
               position: "absolute",
-              width: "30%",
+              width: "25.4%",
               left: "93%",
               top: "0%",
               height: "100%",
