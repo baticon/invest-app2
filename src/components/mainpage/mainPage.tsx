@@ -13,6 +13,7 @@ const MainPage = () => {
   useEffect(() => {
     async function pullData() {
       const stocks = await fetchStocks();
+      console.log(stocks);
       setStocks(stocks);
     }
 

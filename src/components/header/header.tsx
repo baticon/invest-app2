@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from "../../media/jusan_logo.svg";
 import backgroundVideo from "../../media/videoplayback2.mp4";
 import { INewsInfo } from "./types";
 import useNews from "./useNews";
+import searchBar from "./searchBar";
 
 const Header = () => {
   const newsLine: INewsInfo[] = useNews();
