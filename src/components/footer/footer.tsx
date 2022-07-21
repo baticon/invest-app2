@@ -4,7 +4,7 @@ import style from "./footer.module.css";
 const Footer = () => {
   return (
     <footer className={style.footer}>
-      <div style={{ height: "100%" }}>
+      <div className={style.container}>
         <a href="https://www.jusaninvest.kz/">
           <Logo className={style.logo}></Logo>
         </a>
