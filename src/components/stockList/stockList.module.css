@@ -12,7 +12,6 @@
   grid-template-rows: 120px auto 80px; */
   grid-template-columns: 20% 20% 20% 20%;
   grid-template-rows: 40% 40% 40% 40%;
-
   column-gap: 5%;
   row-gap: 5%;
   color: white;

@@ -52,7 +52,7 @@ const Header = () => {
           </li>
         </ul>
 
-        <div style={{ backgroundColor: "red", display: "flex" }}>
+        <div style={{ backgroundColor: "red", display: "flex", width: "50%" }}>
           <button>Search</button>
           <input
             className={newsStyle.searchField}

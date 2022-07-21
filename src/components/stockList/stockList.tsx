@@ -6,8 +6,11 @@ import GetLogo from "./getLogo";
 import GetPrice from "./getPrice";
 
 const StockList: FC<IStockProps> = ({ stocks, page }) => {
-  let stocksTo = page * 13 - 1;
-  let stocksFrom = stocksTo - 12;
+  let stocksTo = page * 5 - 1;
+  let stocksFrom = stocksTo - 4;
+
+  // let stocksTo = 5;
+  // let stocksFrom = 1;
 
   let slicedStocks = stocks.slice(stocksFrom, stocksTo);
 
