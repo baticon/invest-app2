@@ -18,7 +18,6 @@ const Footer = () => {
             https://www.jusaninvest.kz/
           </a>
         </p>
-        <p>Author: Batyrbek Kantarbayev</p>
       </div>
     </footer>
   );

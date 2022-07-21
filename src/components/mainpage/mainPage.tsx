@@ -20,12 +20,24 @@ const MainPage = () => {
     pullData();
   }, []);
 
+  const [search, setSearch] = useState("");
+
+  const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const enteredStock = event.target.value;
+    setSearch(enteredStock);
+  };
+
+  function mySubmitFunction(event: React.ChangeEvent<HTMLInputElement>) {
+    event.preventDefault();
+    return;
+  }
+
   return (
     <div>
       <Header />
       <div className={style.container}>
+        <h1 className={style.header}>Stocks</h1>
         <div className={style.buttonContainer}>
-          <h1 className={style.header}>Stocks</h1>
           <button
             className={style.button}
             onClick={() => {
@@ -44,8 +56,15 @@ const MainPage = () => {
             ⏩
           </button>
         </div>
+        <form className={style.formContainer} onSubmit={() => mySubmitFunction}>
+          <input
+            placeholder="Search by ticker (ex, AAPL, IBM, etc)"
+            onChange={inputHandler}
+          ></input>
+          <button type="submit"> Search </button>
+        </form>
         <div className={style.stockListContainer}>
-          <StockList stocks={stocks} page={page}></StockList>
+          <StockList search={search} stocks={stocks} page={page}></StockList>
         </div>
       </div>
 

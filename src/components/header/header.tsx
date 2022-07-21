@@ -51,16 +51,6 @@ const Header = () => {
             </a>
           </li>
         </ul>
-
-        <div style={{ backgroundColor: "red", display: "flex", width: "50%" }}>
-          <button>Search</button>
-          <input
-            className={newsStyle.searchField}
-            type="text"
-            placeholder="🔍 Search by stock symbol (AAPL, CHCI ...)"
-            id="searchField"
-          />
-        </div>
       </div>
     </div>
   );
