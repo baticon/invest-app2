@@ -26,24 +26,6 @@ const Header = () => {
           <div className={style.user}>Login</div>
           <span>Sing up</span>
         </div>
-        <div className={style.video} key={`${Date.now()}+w`}>
-          <video
-            autoPlay
-            loop
-            muted
-            style={{
-              position: "absolute",
-              width: "25.4%",
-              left: "93%",
-              top: "0%",
-              height: "100%",
-              objectFit: "cover",
-              zIndex: "0",
-            }}
-          >
-            <source src={backgroundVideo} type="video/mp4"></source>
-          </video>
-        </div>
       </header>
       <div className={newsStyle.tickerwrapperv} key={`${Date.now()}+e`}>
         <div className={newsStyle.heading}>Trending Now</div>

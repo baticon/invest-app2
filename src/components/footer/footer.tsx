@@ -7,7 +7,6 @@ const Footer = () => {
       <a href="https://www.jusaninvest.kz/">
         <Logo className={style.logo}></Logo>
       </a>
-      <p>Author: Batyrbek Kantarbayev</p>
       <p>
         <span>
           {" "}
@@ -18,6 +17,7 @@ const Footer = () => {
           https://www.jusaninvest.kz/
         </a>
       </p>
+      <p>Author: Batyrbek Kantarbayev</p>
     </footer>
   );
 };

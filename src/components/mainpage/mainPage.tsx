@@ -24,27 +24,31 @@ const MainPage = () => {
     <div>
       <Header />
       <div className={style.container}>
-        <StockList stocks={stocks} page={page}></StockList>
+        <div className={style.buttonContainer}>
+          <h1 className={style.header}>Stocks</h1>
+          <button
+            className={style.button}
+            onClick={() => {
+              setPage(page - 1);
+            }}
+          >
+            ⏪
+          </button>
+          <span> page {page} </span>
+          <button
+            className={style.button}
+            onClick={() => {
+              setPage(page + 1);
+            }}
+          >
+            ⏩
+          </button>
+        </div>
+        <div className={style.stockListContainer}>
+          <StockList stocks={stocks} page={page}></StockList>
+        </div>
       </div>
-      <div className={style.buttonContainer}>
-        <button
-          className={style.button}
-          onClick={() => {
-            setPage(page - 1);
-          }}
-        >
-          ⏪
-        </button>
-        <span> page {page} </span>
-        <button
-          className={style.button}
-          onClick={() => {
-            setPage(page + 1);
-          }}
-        >
-          ⏩
-        </button>
-      </div>
+
       <Footer />
     </div>
   );

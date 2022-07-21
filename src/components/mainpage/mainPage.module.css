@@ -6,10 +6,15 @@
 
 .buttonContainer {
   width: 100%;
-  margin: 5px;
+  margin-top: 5px;
   text-align: center;
 }
 
 .button {
   margin: 10px;
+}
+
+.stockListContainer {
+  width: 90%;
+  margin: auto;
 }

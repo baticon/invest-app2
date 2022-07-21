@@ -6,8 +6,8 @@ import GetLogo from "./getLogo";
 import GetPrice from "./getPrice";
 
 const StockList: FC<IStockProps> = ({ stocks, page }) => {
-  let stocksTo = page * 10 - 1;
-  let stocksFrom = stocksTo - 9;
+  let stocksTo = page * 13 - 1;
+  let stocksFrom = stocksTo - 12;
 
   let slicedStocks = stocks.slice(stocksFrom, stocksTo);
 
@@ -37,7 +37,6 @@ const StockList: FC<IStockProps> = ({ stocks, page }) => {
 
   return (
     <div className={style.container} key="hello">
-      <h1 className={style.header}>Stocks</h1>
       <div className={style.stockList} key="there">
         {renderListItems()}
       </div>
