@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import fetchLogo from "../../data/logoFetch";
 
-function GetLogo(stockSymbol: string) {
-  const [logo, setLogo] = useState<String>();
+function useGetLogo(stockSymbol: string) {
+  const [logo, setLogo] = useState<String>("");
   useEffect(() => {
     async function pullData() {
       const fetchedLogo = await fetchLogo(stockSymbol);
@@ -15,4 +15,4 @@ function GetLogo(stockSymbol: string) {
   return logo;
 }
 
-export default GetLogo;
+export default useGetLogo;

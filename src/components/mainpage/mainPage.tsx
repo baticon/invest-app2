@@ -27,7 +27,7 @@ const MainPage = () => {
     setSearch(enteredStock);
   };
 
-  function mySubmitFunction(event: React.ChangeEvent<HTMLInputElement>) {
+  function mySubmitFunction(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     return;
   }
@@ -56,12 +56,12 @@ const MainPage = () => {
             ⏩
           </button>
         </div>
-        <form className={style.formContainer} onSubmit={() => mySubmitFunction}>
+        <form className={style.formContainer} onSubmit={mySubmitFunction}>
           <input
             placeholder="Search by ticker (ex, AAPL, IBM, etc)"
             onChange={inputHandler}
+            value={search}
           ></input>
-          <button type="submit"> Search </button>
         </form>
         <div className={style.stockListContainer}>
           <StockList search={search} stocks={stocks} page={page}></StockList>
