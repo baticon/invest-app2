@@ -14,8 +14,8 @@ const Stock: FC<IStock> = ({ obj, key }) => {
   let price = useGetPrice(obj.displaySymbol);
   let logo = useGetLogo(obj.displaySymbol);
   return (
-    <Link to={`/companydetails/${obj.displaySymbol}`} key={key}>
-      <div key={obj.displaySymbol} className={style.individualStock}>
+    <Link to={`/companydetails/${obj.displaySymbol}`} key={obj.displaySymbol}>
+      <div key={obj.displaySymbol + 0} className={style.individualStock}>
         <span className={style.span} key={obj.displaySymbol + 1}>
           Stock name: {obj.description}
         </span>
@@ -48,7 +48,9 @@ const StockList: FC<IStockProps> = ({ search, stocks = [], page }) => {
   let slicedStocks: ISearchStock[] = [];
   if (searchInput) {
     slicedStocks = stocks.filter(
-      (obj: ISearchStock) => obj.displaySymbol === searchInput
+      (obj: ISearchStock) => obj.description === searchInput
+      // (obj: ISearchStock) => obj.displaySymbol.includes(searchInput)
+      // (obj: ISearchStock) => obj.description.includes(searchInput)
     );
   } else {
     slicedStocks = stocks.slice(stocksFrom, stocksTo);
@@ -57,9 +59,15 @@ const StockList: FC<IStockProps> = ({ search, stocks = [], page }) => {
   return (
     <div className={style.container} key="hello">
       <div className={style.stockList} key="there">
-        {slicedStocks.map((stock: ISearchStock, i) => {
-          return <Stock obj={stock} key={i} />;
-        })}
+        {slicedStocks.length === 0 ? (
+          <>
+            <div style={{ color: "black" }}>No result</div>
+          </>
+        ) : (
+          slicedStocks.map((stock: ISearchStock, i) => {
+            return <Stock obj={stock} key={i} />;
+          })
+        )}
       </div>
     </div>
   );
