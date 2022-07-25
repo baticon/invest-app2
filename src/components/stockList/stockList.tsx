@@ -47,11 +47,10 @@ const StockList: FC<IStockProps> = ({ search, stocks = [], page }) => {
 
   let slicedStocks: ISearchStock[] = [];
   if (searchInput) {
-    slicedStocks = stocks.filter(
-      (obj: ISearchStock) => obj.description === searchInput
-      // (obj: ISearchStock) => obj.displaySymbol.includes(searchInput)
-      // (obj: ISearchStock) => obj.description.includes(searchInput)
+    slicedStocks = stocks.filter((obj: ISearchStock) =>
+      obj.description.includes(searchInput)
     );
+    slicedStocks = slicedStocks.slice(stocksFrom, stocksTo);
   } else {
     slicedStocks = stocks.slice(stocksFrom, stocksTo);
   }

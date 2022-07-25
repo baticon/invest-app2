@@ -62,6 +62,7 @@ const MainPage = () => {
             onChange={inputHandler}
             value={search}
           ></input>
+          <button onClick={() => setSearch("")}>Clear</button>
         </form>
         <div className={style.stockListContainer}>
           <StockList search={search} stocks={stocks} page={page}></StockList>

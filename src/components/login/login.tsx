@@ -1,6 +1,8 @@
 import style from "./login.module.css";
+import { useNavigate } from "react-router-dom";
 
-const login = () => {
+const Login = () => {
+  const navigate = useNavigate();
   return (
     <form className={style.loginForm}>
       <h2>Login</h2>
@@ -18,11 +20,17 @@ const login = () => {
         pattern="^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}"
         title="Пароль — от 8 до 30 символов, обязательно хотя бы один спецсимвол и цифра."
       />
-      <button id="loginButton" className="button">
+      <button
+        id="loginButton"
+        className="button"
+        onClick={() => {
+          navigate("/main");
+        }}
+      >
         Enter
       </button>
     </form>
   );
 };
 
-export default login;
+export default Login;
