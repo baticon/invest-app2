@@ -1,7 +1,6 @@
 # Getting Started with Create React App
 
 This project is a mimic of an invest application.
-https://dreamy-melba-992f27.netlify.app/
 
 ## Available Scripts
 
