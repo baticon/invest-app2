@@ -4,19 +4,24 @@ import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [loginResult, setLoginResult] = useState(false);
-  const [passwordResult, setPasswordResult] = useState(false);
 
+  function mySubmitFunction(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    return;
+  }
+
+  const [loginResult, setLoginResult] = useState(false);
   const loginInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
     const pattern = /^(?=.{3,15}$)(?=.*[a-zA-Z])([a-zA-Z\d-]+)$/;
-    const setLoginResult = pattern.test(text);
+    setLoginResult(pattern.test(text));
   };
 
+  const [passwordResult, setPasswordResult] = useState(false);
   const passwordInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
     const pattern = /^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}/;
-    const setPasswordResult = pattern.test(text);
+    setPasswordResult(pattern.test(text));
   };
 
   function redirect() {
@@ -26,12 +31,12 @@ const Login = () => {
   }
 
   return (
-    <form className={style.loginForm}>
+    <form className={style.loginForm} onSubmit={mySubmitFunction}>
       <h2>Login</h2>
       <input
         type="text"
         placeholder="Login"
-        pattern="(?=.*[a-zA-Z-].*)[a-zA-Z0-9-_]+"
+        pattern="^(?=.{3,15}$)(?=.*[a-zA-Z])([a-zA-Z\d-]+)$"
         title="Логин — от 3 до 15 символов, только латиница. Без пробелов, без
       спецсимволов, кроме нижнего подчеркивания и дефиса. Может содержать
       числа, но не полностью состоять из них."
